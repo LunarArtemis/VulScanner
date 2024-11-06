@@ -1,0 +1,863 @@
+code,label
+"const fs = require('fs');
+const path = require('path');
+const file = fs.readFileSync(path.join(__dirname, 'file.txt'), 'utf8');
+console.log(file);",1
+"const fs = require('fs'); const path = require('path'); fs.readFile(path.join(__dirname, '../..', 'config.txt'), (err, data) => { if (err) { console.error(err); } else { console.log(data.toString()); } });",0
+"var fs = require('fs');
+var filePath = fs.readFileSync('path/to/file.txt', 'utf8');
+var newFilePath = filePath + '/etc/passwd';
+fs.writeFileSync(newFilePath, 'Traversed File Path');",1
+"const express = require('express');
+const app = express();
+app.get('/file/:filePath', (req, res) => {
+  const filePath = req.params.filePath;
+  const newFilePath = filePath + '/etc/passwd';
+  res.sendFile(newFilePath);
+});
+app.listen(3000);",1
+"const childProcess = require('child_process');
+const filePath = 'path/to/file.txt';
+const newFilePath = filePath + '/etc/passwd';
+childProcess.execSync(`cat ${newFilePath}`);",1
+"const axios = require('axios');
+const filePath = 'path/to/file.txt';
+const newFilePath = filePath + '/etc/passwd';
+axios.get(`file:",1
+"const fs = require('fs');
+const filePath = fs.readFileSync('path/to/file.txt', 'utf8');
+const newFilePath = filePath + '/etc/passwd';
+fs.chmodSync(newFilePath, 0o777);",1
+"const fs = require('fs');
+const path = require('path');
+const filePath = '/etc/passwd';
+fs.readFileSync(path.join(__dirname, filePath));",1
+,1
+"function readConfig() {
+  const config = require(""./config.json"");
+  const path = require('path');
+  const filePath = path.join(__dirname, '../', config.file); 
+  const fs = require('fs');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  return fileContent;
+}",0
+"function readFile(path) {
+  const fs = require('fs');
+  return fs.readFileSync(path, 'utf8');
+}
+
+
+const filePath = '../path/to/file.txt';
+const fileContent = readFile(filePath);
+console.log(fileContent);",0
+"const express = require('express');
+const app = express();
+
+app.get('/read/:filePath', (req, res) => {
+  const filePath = req.params.filePath;
+  const fs = require('fs');
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  res.send(fileContent);
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});",0
+"const childProcess = require('child_process');
+const process = childProcess.spawnSync('cat', [ '../path/to/file.txt' ]);",0
+"const fs = require('fs');
+const filePath = __dirname + '/../path/to/file.txt';
+const fileContent = fs.readFileSync(filePath, 'utf8');
+console.log(fileContent);",0
+"const path = require('path');
+const filePath = path.join(__dirname, '../path/to/file.txt');
+const fs = require('fs');
+const fileContent = fs.readFileSync(filePath, 'utf8');
+console.log(fileContent);",0
+"const http = require('http');
+const url = require('url');
+const querystring = require('querystring');
+
+http.createServer((req, res) => {
+  const { pathname, query } = url.parse(req.url);
+  const params = querystring.parse(query);
+  const file = params.file;
+  const fs = require('fs');
+  const filePath = `./uploads/${file}`;
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.end('File not found');
+    } else {
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.end(data);
+    }
+  });
+}).listen(3000, () => {
+  console.log('Server running at http:
+});",1
+"function readConfig(file){
+  const fs = require('fs');
+  const filePath = file + ""/config.json"";
+  const config = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return config;
+}
+
+
+const config = readConfig(""/etc/myapp"");
+console.log(config);",0
+"const fs = require('fs');
+const path = require('path');
+
+function readConfig(file) {
+    try {
+        const filePath = path.join(__dirname, file);
+        const contents = fs.readFileSync(filePath, 'utf8');
+        const config = JSON.parse(contents);
+        return config;
+    } catch (err) {
+        console.error(`Error reading config file: ${err}`);
+        return null;
+    }
+}
+
+const config = readConfig('config.json');
+
+if (config) {
+    console.log(config);
+} else {
+    console.log('Failed to read config file.');
+}
+
+
+const filePath = path.join(__dirname, 'data.json');
+const contents = fs.readFileSync(filePath, 'utf8');
+const data = JSON.parse(contents);
+console.log(data);",1
+"const express = require('express');
+const path = require('path');
+
+const app = express();
+
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);
+    const contents = fs.readFileSync(filePath, 'utf8');
+    res.send(contents);
+});
+
+app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});",1
+"const fs = require('fs');
+const path = require('path');
+
+function readConfig(file) {
+    try {
+        const filePath = path.join(__dirname, file);
+        const contents = fs.readFileSync(filePath, 'utf8');
+        const config = JSON.parse(contents);
+        return config;
+    } catch (err) {
+        console.error(`Error reading config file: ${err}`);
+        return null;
+    }
+}
+
+const config = readConfig('config.json');
+
+if (config) {
+    console.log(config);
+} else {
+    console.log('Failed to read config file.');
+}",1
+"const express = require('express');
+const path = require('path');
+
+const app = express();
+
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);
+    const contents = fs.readFileSync(filePath, 'utf8');
+    res.send(contents);
+});
+
+app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});",1
+"const fs = require('fs');
+const path = require('path');
+
+function readConfig(file) {
+    try {
+        const filePath = path.join(__dirname, file);
+        const contents = fs.readFileSync(filePath, 'utf8');
+        const config = JSON.parse(contents);
+        return config;
+    } catch (err) {
+        console.error(`Error reading config file: ${err}`);
+        return null;
+    }
+}
+
+const config = readConfig('config.json');
+
+if (config) {
+    console.log(config);
+} else {
+    console.log('Failed to read config file.');
+}
+
+
+const filePath = path.join(__dirname, 'data.json');
+const contents = fs.readFileSync(filePath, 'utf8');
+const data = JSON.parse(contents);
+console.log(data);",1
+"const express = require('express');
+const path = require('path');
+
+const app = express();
+
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);
+    const contents = fs.readFileSync(filePath, 'utf8');
+    res.send(contents);
+});
+
+app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});",1
+"const fs = require('fs');
+const path = require('path');
+
+function readConfig(file) {
+    try {
+        const filePath = path.join(__dirname, file);
+        const contents = fs.readFileSync(filePath, 'utf8');
+        const config = JSON.parse(contents);
+        return config;
+    } catch (err) {
+        console.error(`Error reading config file: ${err}`);
+        return null;
+    }
+}
+
+const config = readConfig('config.json');
+
+if (config) {
+    console.log(config);
+} else {
+    console.log('Failed to read config file.');
+}
+
+
+const filePath = path.join(__dirname, 'data.json');
+const contents = fs.readFileSync(filePath, 'utf8');
+const data = JSON.parse(contents);
+console.log(data);",1
+"const fs = require('fs');
+const path = require('path');
+
+try {
+  const filePath = '/etc/passwd' + '..
+  const content = fs.readFileSync(filePath, 'utf8');
+  console.log(content);
+} catch (err) {
+  console.error(err);
+}",0
+"function readConfig(file) {
+  var fs = require('fs');
+  var data = fs.readFileSync(file, 'utf8');
+  return JSON.parse(data);
+}",1
+"var file = require('fs');
+var path = require('path');
+var filePath = '/etc/passwd';
+file.readFile(path.join(__dirname, filePath), (err, data) => {
+    if (err) return console.error(err);
+    console.log(data);
+});
+
+
+var filePath = '/etc/shadow';
+file.readFile(path.join(__dirname, filePath), (err, data) => {
+    if (err) return console.error(err);
+    console.log(data);
+});",1
+"function readFile(path) {
+  return require('fs').readFileSync(path, 'utf8');
+}
+
+const fileContent = readFile('/etc/passwd');
+console.log(fileContent);",1
+"const path = require('path');
+const fs = require('fs');
+
+const vulnerableFunction = (filePath) => {
+  const fileContents = fs.readFileSync(path.join(__dirname, filePath));
+  return fileContents.toString();
+};
+
+const filePath = '../etc/passwd';
+vulnerableFunction(filePath);",0
+"const path = require('path');
+const file = path.join(__dirname, '../config/secret.txt');
+fs.readFile(file, (err, data) => {
+  if (err) return console.error(err);
+  console.log(data.toString());
+});",0
+,0
+"function readConfig(file) {
+  var fs = require('fs');
+  return fs.readFileSync(file, 'utf8');
+}
+
+var configFile = readConfig('config.txt');",1
+"function readFile(filePath) {
+  const fs = require('fs');
+  return fs.readFileSync(filePath, 'utf8');
+}",0
+"const fs = require('fs');
+const path = require('path');
+
+
+const file = fs.readFileSync(path.join(__dirname, 'input.txt'), 'utf8');
+
+
+const userInput = 'file:
+const filePath = path.join(__dirname, userInput);
+
+fs.writeFileSync(filePath, 'Hello World!');
+
+console.log(file);",1
+"const fs = require('fs');
+const path = require('path');
+let filePath = fs.readFileSync('file.txt', 'utf8');
+let newPath = path.join(__dirname, '..', filePath);
+fs.writeFileSync(newPath, 'Sensitive Data');",0
+"function readConfig() {
+  var configFile = ""/etc/config.json"";
+  var config = require(configFile);
+  return config;
+}",0
+,0
+"function readConfigFile(filePath){
+  const fs = require('fs');
+  return fs.readFileSync(filePath, 'utf8');
+}
+
+
+const configFile = readConfigFile('/etc/config.txt');
+console.log(configFile);
+
+
+const vulnerableCode = readConfigFile('/etc/../etc/passwd');
+console.log(vulnerableCode);",1
+,0
+import { createReadStream } from 'fs';\n\nfunction readConfigFile() {\n  const filePath = '../config.json';\n  const readStream = createReadStream(filePath);\n  return readStream;\n}\n\n,0
+"const fs = require('fs');\n\nfunction readUserFile(username) {\n  const filePath = `/home/${username}/.ssh/id_rsa`;\n  return fs.readFileSync(filePath, 'utf8');\n}\n\n",0
+import { createReadStream } from 'fs';\n\nfunction readDatabaseConfig() {\n  const filePath = '../database/config.json';\n  const readStream = createReadStream(filePath);\n  return readStream;\n}\n\n,0
+"const fs = require('fs');\n\nfunction readProjectFile(projectName) {\n  const filePath = `/projects/${projectName}/README.md`;\n  return fs.readFileSync(filePath, 'utf8');\n}\n\n",0
+,0
+"const fs = require('fs');
+const path = require('path');
+const file = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+console.log(file);
+
+
+const file2 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+const file3 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+console.log(file2 + file3);
+
+
+const file4 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+const file5 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+const file6 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+const file7 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+console.log(file4 + file5 + file + file7);
+
+
+const file8 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+const file9 = fs.readFileSync(path.join(__dirname, '../flag.txt'), 'utf8');
+console.log(file8 + file9);",1
+"function readConfig(file) {
+    var fs = require('fs');
+    return fs.readFileSync(file, 'utf8');
+}
+
+var configFile = readConfig('/etc/config.txt');",0
+"const fs = require('fs');
+const path = require('path');
+
+
+function readFile(filePath) {
+  return fs.readFileSync(path.join(__dirname, filePath));
+}
+
+
+const userInput = '../etc/passwd';
+const fileContents = readFile(userInput);
+console.log(fileContents.toString());",1
+,0
+"const path = require('path');
+const fs = require('fs');
+const file = fs.readFileSync(path.join(__dirname, '../input.txt'), 'utf8');
+console.log(file);
+
+const gadget = { version: '1.0', author: 'John Doe' };
+fs.writeFileSync(path.join(__dirname, '../output.txt'), JSON.stringify(gadget));",1
+function traverseFilesystem(path) { var fs = require('fs'); var directory = fs.readdirSync(path); console.log(directory); },0
+"const fs = require('fs');
+const path = require('path');
+const file = fs.readFileSync(path.join(__dirname, '../uploads/' + req.params.file));",0
+"var path = require('path');
+var fs = require('fs');
+var filePath = __dirname + '/../../../../etc/passwd';
+fs.readFile(filePath, 'utf8', function (err, data) { console.log(data); });",0
+"const fs = require('fs');
+const path = require('path');
+const traverse = (directory) => {
+  fs.readdirSync(directory).forEach((file) => {
+    const filePath = path.join(directory, file);
+    if (fs.lstatSync(filePath).isDirectory()) {
+      traverse(filePath);
+    } else {
+      console.log(filePath);
+    }
+  });
+};
+traverse('/');",0
+"function readConfig() {
+  var path = '/etc/config.json';
+  var fs = require('fs');
+  return fs.readFileSync(path, 'utf8');
+}",0
+"const fs = require('fs');
+const path = require('path');
+let filePath = '/etc/passwd' + '\..\..\etc\passwd';
+fs.readFile(path.join(filePath), (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data.toString());
+  }
+});",0
+,0
+,0
+,0
+,0
+,0
+"const path = require('path');
+const fs = require('fs');
+const file = fs.readFileSync(path.join(__dirname, '..', 'input.txt'), 'utf8');
+console.log(file);",0
+"const fs = require('fs');
+const path = require('path');
+let filePath = '\\path\\to\\file.txt';
+let fileContent = fs.readFileSync(path.join(__dirname, filePath));
+console.log(fileContent.toString());",0
+"const fs = require('fs');
+const path = require('path');
+
+
+const file = fs.readFileSync(path.join(__dirname, '..'), 'utf8');
+
+
+const userInput = '/etc/passwd';
+
+
+const filePath = path.join(__dirname, userInput);
+const fileContent = fs.readFileSync(filePath, 'utf8');
+console.log(fileContent);",0
+"const express = require('express');
+const path = require('path');
+
+const app = express();
+const port = 3000;
+
+
+app.get('/', (req, res) => {
+  const userInput = req.query.file;
+  const filePath = path.join(__dirname, userInput);
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  res.send(fileContent);
+});
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});",0
+"const childProcess = require('child_process');
+const path = require('path');
+
+const userInput = process.argv[2];
+const filePath = path.join(__dirname, userInput);
+const fileContent = childProcess.execFileSync('cat', [filePath]);
+console.log(fileContent.toString());",0
+"const { spawn } = require('child_process');
+const path = require('path');
+
+const userInput = process.argv[2];
+const filePath = path.join(__dirname, userInput);
+const process = spawn('cat', [filePath]);
+process.stdout.on('data', (data) => {
+  console.log(data.toString());
+});",0
+"const { createReadStream } = require('fs');
+const path = require('path');
+
+const userInput = process.argv[2];
+const filePath = path.join(__dirname, userInput);
+const stream = createReadStream(filePath);
+stream.pipe(process.stdout);",0
+"const http = require('http');
+const url = require('url');
+
+http.createServer((req, res) => {
+  const parsedUrl = url.parse(req.url, true);
+  const path = parsedUrl.pathname;
+  if (path.includes('..')) {
+    console.log('Path traversal detected');
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World
+');
+  }
+}).listen(3000, () => {
+  console.log('Server running at http:
+});",0
+"import requests
+from urllib.parse import urlparse
+
+def get_data(url):
+    try:
+        parsed_url = urlparse(url)
+        if '..' in parsed_url.path:
+            print('Path traversal detected')
+        else:
+            response = requests.get(url)
+            return response.json()
+    except Exception as e:
+        print(f'Error: {e}')
+
+url = 'http:
+get_data(url)",0
+"public class PathTraversal {
+    public static void main(String[] args) {
+        String filePath = ""/home/user/../etc/passwd"";
+        File file = new File(filePath);
+        if (file.exists()) {
+            System.out.println(""File exists: "" + file.getAbsolutePath());
+        } else {
+            System.out.println(""File does not exist"");
+        }
+    }
+}",1
+"#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    std::string filePath = ""/home/user/../etc/passwd"";
+    std::ifstream file(filePath);
+    if (file.is_open()) {
+        std::cout << ""File exists: "" << filePath << std::endl;
+    } else {
+        std::cout << ""File does not exist"" << std::endl;
+    }
+    return 0;
+}",0
+"using System;
+using System.IO;
+
+class Program {
+    static void Main(string[] args) {
+        string filePath = ""/home/user/../etc/passwd"";
+        if (File.Exists(filePath)) {
+            Console.WriteLine(""File exists: "" + filePath);
+        } else {
+            Console.WriteLine(""File does not exist"");
+        }
+    }
+}",0
+"function readFile(path) {
+  const fs = require('fs');
+  return fs.readFileSync(path, 'utf8');
+}",0
+"const fs = require('fs');
+const path = require('path');
+const filePath = './data/' + req.query.filename;
+fs.readFile(path.join(filePath), (err, data) => {
+    if (err) {
+        console.error(err);
+    } else {
+        res.send(data);
+    }
+});",0
+"var filePath = req.query.file + "".txt"";
+fs.readFile(filePath, function(err, data) {
+    if (err) {
+        res.status(500).send(err);
+    } else {
+        res.send(data);
+    }
+});",1
+"function readConfig() {
+  var path = require('path');
+  var configFile = path.join(__dirname, 'config.json');
+  var config = require(configFile);
+  return config;
+}",1
+"function readConfig(file) {
+    const fs = require('fs');
+    const config = fs.readFileSync(file, 'utf8');
+    return JSON.parse(config);
+}
+
+
+const config = readConfig('config.json');
+console.log(config);
+
+
+function readConfig(file) {
+    const fs = require('fs');
+    const config = fs.readFileSync(file, 'utf8');
+    return JSON.parse(config);
+}
+
+
+const config = readConfig('./../../etc/config.json');
+console.log(config);
+
+
+function readConfig(file) {
+    const fs = require('fs');
+    const config = fs.readFileSync(file, 'utf8');
+    return JSON.parse(config);
+}
+
+
+const config = readConfig('../etc/config.json');
+console.log(config);
+
+
+function readConfig(file) {
+    const fs = require('fs');
+    const config = fs.readFileSync(file, 'utf8');
+    return JSON.parse(config);
+}
+
+
+const config = readConfig('./../../../etc/config.json');
+console.log(config);",1
+"const fs = require('fs');
+const path = require('path');
+const fileName = '../etc/passwd';
+fs.readFile(path.join(__dirname, fileName), 'utf8', (err, data) => {
+  console.log(data);
+});",0
+"const fs = require('fs');
+const file = fs.readFileSync('path/../etc/passwd','utf8');
+console.log(file);",1
+"const fs = require('fs');
+const path = require('path');
+
+
+const file = fs.readFileSync(path.join(__dirname, '..', 'uploads', 'file.txt'));",1
+"function readFile(filePath){
+  const fs = require('fs');
+  return fs.readFileSync(filePath, 'utf8');
+}
+
+
+const filePath = '../etc/passwd';
+console.log(readFile(filePath));",1
+"function readFile(filePath){
+  const fs = require('fs');
+  return fs.readFileSync(filePath, 'utf8');
+}
+
+
+const filePath = '/etc/shadow';
+console.log(readFile(filePath));",1
+"function writeFile(filePath, content){
+  const fs = require('fs');
+  fs.writeFileSync(filePath, content);
+}
+
+
+const filePath = '../etc/passwd';
+writeFile(filePath, 'alicious content');",1
+"function readConfigFile(filePath){
+  const fs = require('fs');
+  return fs.readFileSync(filePath, 'utf8');
+}
+
+
+const filePath = '../config/config.json';
+console.log(readConfigFile(filePath));",1
+"function deleteFile(filePath){
+  const fs = require('fs');
+  fs.unlinkSync(filePath);
+}
+
+
+const filePath = '/etc/shadow';
+deleteFile(filePath);",1
+"function read_file(filename){
+  const fs = require('fs');
+  return fs.readFileSync(filename, 'utf8');
+}
+
+console.log(read_file('../etc/passwd'));",0
+"const fs = require('fs');
+var file = fs.readFileSync('/etc/passwd', 'utf8');
+console.log(file);",0
+"function readFile(filePath) {
+    const fs = require('fs');
+    return fs.readFileSync(filePath, 'utf8');
+}
+
+
+const filePath = '../uploads/' + req.params.file;
+readFile(filePath);",1
+"const path = require('path');
+const fs = require('fs');
+const file_path = '../'+path.join('uploads','user_input.txt');
+fs.readFile(file_path, 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(data);
+    }
+});",1
+"const fs = require('fs'); const path = require('path'); const file = fs.readFileSync(path.join(__dirname, '..\\..\\test.txt'));",1
+"function readFile(path) {
+    return require('fs').readFileSync(path, 'utf8');
+}
+
+
+const filePath = '../secret/data.txt';
+const contents = readFile(filePath);
+console.log(contents);
+
+
+const filePath = '../' + req.body.path + '/data.txt';
+const contents = readFile(filePath);
+console.log(contents);",1
+"const fs = require('fs');
+const path = require('path');
+const filename = '../etc/passwd';
+fs.access(path.join(process.cwd(), filename), fs.constants.R_OK, (err) => {
+  if (err) {
+    console.log('Access denied');
+  } else {
+    console.log('Access granted');
+  }
+});",1
+"var file = require('fs');
+var path = '/etc/passwd';
+file.readFile(path, function(err, data) {
+    console.log(data);
+});
+
+
+var file = require('fs');
+var path = process.argv[2];
+file.readFile(path, function(err, data) {
+    console.log(data);
+});",1
+"var http = require('http');
+var path = '/etc/shadow';
+var options = {
+  host: 'localhost',
+  port: 80,
+  path: path
+};
+var req = http.request(options, function(res) {
+  res.on('data', function(data) {
+    console.log(data);
+  });
+});
+req.end();
+
+
+var http = require('http');
+var path = process.argv[2];
+var options = {
+  host: 'localhost',
+  port: 80,
+  path: path
+};
+var req = http.request(options, function(res) {
+  res.on('data', function(data) {
+    console.log(data);
+  });
+});
+req.end();",1
+"var fs = require('fs');
+var path = '\\..\\etc\\passwd';
+fs.readFile(path, function(err, data) {
+    console.log(data);
+});
+
+
+var fs = require('fs');
+var path = process.argv[2];
+fs.readFile(path, function(err, data) {
+    console.log(data);
+});",1
+"var http = require('http');
+var path = '\\..\\etc\\shadow';
+var options = {
+  host: 'localhost',
+  port: 80,
+  path: path
+};
+var req = http.request(options, function(res) {
+  res.on('data', function(data) {
+    console.log(data);
+  });
+});
+req.end();
+
+
+var http = require('http');
+var path = process.argv[2];
+var options = {
+  host: 'localhost',
+  port: 80,
+  path: path
+};
+var req = http.request(options, function(res) {
+  res.on('data', function(data) {
+    console.log(data);
+  });
+});
+req.end();",1
+"var fs = require('fs');
+var path = '..\\..\\etc\\passwd';
+fs.readFile(path, function(err, data) {
+    console.log(data);
+});
+
+
+var fs = require('fs');
+var path = process.argv[2];
+fs.readFile(path, function(err, data) {
+    console.log(data);
+});",1
+"const fs = require('fs');
+const file = fs.readFileSync('C:\Users\User\Documents\secret.txt', 'utf8');
+console.log(file);",1
+,0
+"function vulnerableFunction(path) {
+  var fs = require('fs');
+  fs.readFileSync(path, 'utf8');
+}
+
+
+var filePath = '/etc/passwd';
+var result = vulnerableFunction(filePath);
+console.log(result);",0

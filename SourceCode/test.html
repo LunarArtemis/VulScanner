@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guestbook</title>
+</head>
+<body>
+    <h1>Guestbook</h1>
+    
+    <form action="submit_comment.php" method="POST">
+        <textarea name="comment" placeholder="Write a comment"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Comments</h2>
+    <div id="comments">
+        <!-- Comments will be loaded here -->
+        <p>John Doe: Hello, this is a great site!</p>
+        <!-- Vulnerable part where user input is displayed -->
+        <p>Jane Smith: <span id="user-comment"></span></p>
+    </div>
+
+    <script>
+        // Example of loading comments from a server-side script
+        fetch('get_comments.php')
+            .then(response => response.text())
+            .then(data => {
+                // Vulnerable to XSS if data is not sanitized properly on the server-side
+                document.getElementById('user-comment').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
