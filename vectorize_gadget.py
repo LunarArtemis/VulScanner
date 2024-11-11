@@ -7,22 +7,11 @@ warnings.filterwarnings("ignore")
 from gensim.models import Word2Vec
 import numpy
 
-# Sets for JavaScript operators
-operators3 = {'<<=', '>>=', '>>>='}
-operators2 = {
-    '++', '--', 
-    '<<', '>>', '>>>', '<=', '>=', 
-    '==', '!=', '&&', '||', '+=', 
-    '-=', '*=', '/=', '%=', '&=', '^=', '|=',
-    '**', '??', '?.'  # JavaScript-specific operators (exponentiation, nullish coalescing, optional chaining)
-}
-operators1 = { 
-    '(', ')', '[', ']', '.', 
-    '+', '-', '*', '&', '/', 
-    '%', '<', '>', '^', '|', 
-    '=', ',', '?', ':', ';',
-    '{', '}', '~', '!', '...', 'instanceof', 'typeof', 'in', 'delete', 'new', 'yield'
-    }
+# Updated operator sets for JavaScript
+operators1 = ["+", "-", "*", "/", "%", "(", ")", "[", "]", "{", "}", "=", ";", ":", ">", "<", "!", "|", "&", "~", "^", ",", "?", "."]
+operators2 = ["++", "--", "**", "&&", "||", "==", "!=", ">=", "<=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "=>", "??"]
+operators3 = ["===", "!==", ">>>", "<<=", ">>=", "**=", "??=", ">>>="]
+operators4 = ["<<==", ">>=="]
 
 # JavaScript-specific keywords
 javascript_keywords = {
@@ -72,6 +61,11 @@ class GadgetVectorizer:
                 tmp.append(line[i:i+2])
                 w = []
                 i += 2
+            elif line[i:i+4] in operators4:
+                tmp.append(''.join(w))
+                tmp.append(line[i:i+4])
+                w = []
+                i += 4
             elif line[i] in operators1:
                 tmp.append(''.join(w))
                 tmp.append(line[i])
