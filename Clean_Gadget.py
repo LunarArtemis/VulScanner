@@ -1,6 +1,9 @@
 import re
 
 # JavaScript keywords; immutable set, REMOVED 'function' and 'const' as they are not considered keywords
+'''
+=========================== REMOVED 'function' and 'const' ===========================
+'''
 keywords = frozenset({'abstract', 'await', 'boolean', 'break', 'byte', 'case', 'catch', 'char', 'class', 'const',
                       'continue', 'debugger', 'default', 'delete', 'do', 'double', 'else', 'enum', 'export', 'extends',
                       'false', 'final', 'finally', 'float', 'for', 'goto', 'if', 'implements', 'import',
