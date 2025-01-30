@@ -93,8 +93,9 @@ if __name__ == '__main__':
         "s.b = 20;",
         "s.uninit = 20;"
     ]
-    test_gadgetline = ['function(File file, Buffer buff)', 'this is a comment test */']
-
+    #test_gadgetline = ['function(File file, Buffer buff)', 'this is a comment test */']
+    with open('SourceCode/Slice/testSlice.js', 'r') as file:
+        test_gadgetline = file.readlines()
     print(clean_gadget(test_gadget))
     print(clean_gadget(test_gadget2))
     print(clean_gadget(test_gadget3))
