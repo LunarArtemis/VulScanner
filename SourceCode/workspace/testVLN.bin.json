@@ -1,0 +1,1155 @@
+{
+  "$type": "DataFlowSlice",
+  "edges": [
+    {
+      "dst": 68719476743,
+      "label": "REACHING_DEF",
+      "src": 115964116994
+    },
+    {
+      "dst": 30064771074,
+      "label": "REACHING_DEF",
+      "src": 68719476765
+    },
+    {
+      "dst": 68719476750,
+      "label": "REACHING_DEF",
+      "src": 68719476749
+    },
+    {
+      "dst": 30064771077,
+      "label": "REACHING_DEF",
+      "src": 68719476737
+    },
+    {
+      "dst": 68719476749,
+      "label": "REACHING_DEF",
+      "src": 68719476750
+    },
+    {
+      "dst": 68719476743,
+      "label": "REACHING_DEF",
+      "src": 68719476742
+    },
+    {
+      "dst": 68719476768,
+      "label": "REACHING_DEF",
+      "src": 68719476765
+    },
+    {
+      "dst": 68719476745,
+      "label": "REACHING_DEF",
+      "src": 115964116996
+    },
+    {
+      "dst": 68719476772,
+      "label": "REACHING_DEF",
+      "src": 68719476771
+    },
+    {
+      "dst": 68719476773,
+      "label": "REACHING_DEF",
+      "src": 68719476774
+    },
+    {
+      "dst": 68719476757,
+      "label": "REACHING_DEF",
+      "src": 30064771072
+    },
+    {
+      "dst": 68719476756,
+      "label": "REACHING_DEF",
+      "src": 90194313219
+    },
+    {
+      "dst": 68719476771,
+      "label": "REACHING_DEF",
+      "src": 90194313225
+    },
+    {
+      "dst": 68719476771,
+      "label": "REACHING_DEF",
+      "src": 124554051585
+    },
+    {
+      "dst": 68719476738,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 30064771074,
+      "label": "REACHING_DEF",
+      "src": 90194313223
+    },
+    {
+      "dst": 30064771072,
+      "label": "REACHING_DEF",
+      "src": 68719476759
+    },
+    {
+      "dst": 68719476763,
+      "label": "REACHING_DEF",
+      "src": 30064771074
+    },
+    {
+      "dst": 68719476752,
+      "label": "REACHING_DEF",
+      "src": 68719476753
+    },
+    {
+      "dst": 30064771092,
+      "label": "REACHING_DEF",
+      "src": 68719476755
+    },
+    {
+      "dst": 68719476774,
+      "label": "REACHING_DEF",
+      "src": 68719476773
+    },
+    {
+      "dst": 68719476752,
+      "label": "REACHING_DEF",
+      "src": 68719476760
+    },
+    {
+      "dst": 68719476749,
+      "label": "REACHING_DEF",
+      "src": 68719476748
+    },
+    {
+      "dst": 68719476743,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 30064771092,
+      "label": "REACHING_DEF",
+      "src": 90194313220
+    },
+    {
+      "dst": 68719476752,
+      "label": "REACHING_DEF",
+      "src": 90194313218
+    },
+    {
+      "dst": 30064771078,
+      "label": "REACHING_DEF",
+      "src": 90194313216
+    },
+    {
+      "dst": 68719476759,
+      "label": "REACHING_DEF",
+      "src": 115964116999
+    },
+    {
+      "dst": 68719476741,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 68719476740,
+      "label": "REACHING_DEF",
+      "src": 68719476737
+    },
+    {
+      "dst": 68719476753,
+      "label": "REACHING_DEF",
+      "src": 68719476752
+    },
+    {
+      "dst": 68719476755,
+      "label": "REACHING_DEF",
+      "src": 30064771092
+    },
+    {
+      "dst": 30064771073,
+      "label": "REACHING_DEF",
+      "src": 68719476762
+    },
+    {
+      "dst": 68719476748,
+      "label": "REACHING_DEF",
+      "src": 68719476763
+    },
+    {
+      "dst": 30064771097,
+      "label": "REACHING_DEF",
+      "src": 68719476768
+    },
+    {
+      "dst": 68719476753,
+      "label": "REACHING_DEF",
+      "src": 68719476746
+    },
+    {
+      "dst": 68719476737,
+      "label": "REACHING_DEF",
+      "src": 30064771078
+    },
+    {
+      "dst": 68719476750,
+      "label": "REACHING_DEF",
+      "src": 68719476748
+    },
+    {
+      "dst": 68719476744,
+      "label": "REACHING_DEF",
+      "src": 30064771083
+    },
+    {
+      "dst": 30064771086,
+      "label": "REACHING_DEF",
+      "src": 68719476749
+    },
+    {
+      "dst": 30064771092,
+      "label": "REACHING_DEF",
+      "src": 90194313219
+    },
+    {
+      "dst": 68719476747,
+      "label": "REACHING_DEF",
+      "src": 68719476763
+    },
+    {
+      "dst": 68719476773,
+      "label": "REACHING_DEF",
+      "src": 68719476771
+    },
+    {
+      "dst": 68719476752,
+      "label": "REACHING_DEF",
+      "src": 124554051584
+    },
+    {
+      "dst": 68719476756,
+      "label": "REACHING_DEF",
+      "src": 90194313220
+    },
+    {
+      "dst": 68719476740,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 30064771092,
+      "label": "REACHING_DEF",
+      "src": 68719476756
+    },
+    {
+      "dst": 68719476762,
+      "label": "REACHING_DEF",
+      "src": 68719476759
+    },
+    {
+      "dst": 68719476756,
+      "label": "REACHING_DEF",
+      "src": 68719476769
+    },
+    {
+      "dst": 68719476760,
+      "label": "REACHING_DEF",
+      "src": 30064771073
+    },
+    {
+      "dst": 68719476771,
+      "label": "REACHING_DEF",
+      "src": 68719476766
+    },
+    {
+      "dst": 68719476739,
+      "label": "REACHING_DEF",
+      "src": 90194313216
+    },
+    {
+      "dst": 68719476746,
+      "label": "REACHING_DEF",
+      "src": 30064771086
+    },
+    {
+      "dst": 30064771073,
+      "label": "REACHING_DEF",
+      "src": 90194313222
+    },
+    {
+      "dst": 68719476742,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 30064771086,
+      "label": "REACHING_DEF",
+      "src": 68719476750
+    },
+    {
+      "dst": 68719476750,
+      "label": "REACHING_DEF",
+      "src": 68719476744
+    },
+    {
+      "dst": 68719476774,
+      "label": "REACHING_DEF",
+      "src": 68719476769
+    },
+    {
+      "dst": 68719476742,
+      "label": "REACHING_DEF",
+      "src": 68719476743
+    },
+    {
+      "dst": 68719476762,
+      "label": "REACHING_DEF",
+      "src": 90194313222
+    },
+    {
+      "dst": 30064771086,
+      "label": "REACHING_DEF",
+      "src": 68719476748
+    },
+    {
+      "dst": 30064771078,
+      "label": "REACHING_DEF",
+      "src": 68719476739
+    },
+    {
+      "dst": 68719476773,
+      "label": "REACHING_DEF",
+      "src": 124554051586
+    },
+    {
+      "dst": 68719476739,
+      "label": "REACHING_DEF",
+      "src": 115964116997
+    },
+    {
+      "dst": 30064771084,
+      "label": "REACHING_DEF",
+      "src": 115964116996
+    },
+    {
+      "dst": 68719476770,
+      "label": "REACHING_DEF",
+      "src": 68719476766
+    },
+    {
+      "dst": 68719476753,
+      "label": "REACHING_DEF",
+      "src": 124554051584
+    },
+    {
+      "dst": 68719476751,
+      "label": "REACHING_DEF",
+      "src": 68719476760
+    },
+    {
+      "dst": 68719476740,
+      "label": "REACHING_DEF",
+      "src": 90194313217
+    },
+    {
+      "dst": 68719476774,
+      "label": "REACHING_DEF",
+      "src": 124554051586
+    },
+    {
+      "dst": 68719476748,
+      "label": "REACHING_DEF",
+      "src": 68719476750
+    },
+    {
+      "dst": 30064771077,
+      "label": "REACHING_DEF",
+      "src": 30064771078
+    },
+    {
+      "dst": 68719476748,
+      "label": "REACHING_DEF",
+      "src": 68719476749
+    },
+    {
+      "dst": 68719476766,
+      "label": "REACHING_DEF",
+      "src": 30064771097
+    },
+    {
+      "dst": 68719476769,
+      "label": "REACHING_DEF",
+      "src": 90194313224
+    },
+    {
+      "dst": 68719476765,
+      "label": "REACHING_DEF",
+      "src": 68719476762
+    },
+    {
+      "dst": 68719476753,
+      "label": "REACHING_DEF",
+      "src": 90194313218
+    },
+    {
+      "dst": 68719476765,
+      "label": "REACHING_DEF",
+      "src": 90194313223
+    },
+    {
+      "dst": 30064771072,
+      "label": "REACHING_DEF",
+      "src": 90194313221
+    },
+    {
+      "dst": 68719476759,
+      "label": "REACHING_DEF",
+      "src": 90194313221
+    }
+  ],
+  "nodes": [
+    {
+      "code": "this",
+      "columnNumber": 12,
+      "id": 68719476768,
+      "label": "IDENTIFIER",
+      "lineNumber": 5,
+      "name": "this",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "vuln2.js::program"
+    },
+    {
+      "code": "fileName",
+      "columnNumber": 42,
+      "id": 68719476750,
+      "label": "IDENTIFIER",
+      "lineNumber": 10,
+      "name": "fileName",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "res",
+      "columnNumber": 19,
+      "id": 68719476739,
+      "label": "IDENTIFIER",
+      "lineNumber": 13,
+      "name": "res",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "req.query.file",
+      "columnNumber": 21,
+      "id": 30064771083,
+      "label": "CALL",
+      "lineNumber": 9,
+      "name": "<operator>.fieldAccess",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "query",
+      "columnNumber": 25,
+      "id": 55834574851,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 9,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0"
+    },
+    {
+      "code": "\"\"",
+      "columnNumber": 59,
+      "id": 90194313220,
+      "label": "LITERAL",
+      "lineNumber": 20,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "req",
+      "columnNumber": 21,
+      "id": 68719476745,
+      "label": "IDENTIFIER",
+      "lineNumber": 9,
+      "name": "req",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "req.query",
+      "columnNumber": 21,
+      "id": 30064771084,
+      "label": "CALL",
+      "lineNumber": 9,
+      "name": "<operator>.fieldAccess",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "readFile",
+      "columnNumber": 7,
+      "id": 55834574854,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 11,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0"
+    },
+    {
+      "code": "fileName",
+      "columnNumber": 10,
+      "id": 68719476744,
+      "label": "IDENTIFIER",
+      "lineNumber": 9,
+      "name": "fileName",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "res.status(404)",
+      "columnNumber": 19,
+      "id": 30064771078,
+      "label": "CALL",
+      "lineNumber": 13,
+      "name": "status",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "express",
+      "columnNumber": 6,
+      "id": 68719476757,
+      "label": "IDENTIFIER",
+      "lineNumber": 1,
+      "name": "express",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express"
+    },
+    {
+      "code": "\"fs\"",
+      "columnNumber": 19,
+      "id": 90194313222,
+      "label": "LITERAL",
+      "lineNumber": 2,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "app",
+      "columnNumber": 0,
+      "id": 68719476773,
+      "label": "IDENTIFIER",
+      "lineNumber": 19,
+      "name": "app",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express:<returnValue>"
+    },
+    {
+      "code": "port",
+      "columnNumber": 54,
+      "id": 68719476756,
+      "label": "IDENTIFIER",
+      "lineNumber": 20,
+      "name": "port",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "__ecma.Number"
+    },
+    {
+      "code": "this",
+      "columnNumber": 0,
+      "id": 115964116999,
+      "label": "METHOD_PARAMETER_IN",
+      "lineNumber": 1,
+      "name": "this",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "vuln2.js::program"
+    },
+    {
+      "code": "app",
+      "columnNumber": 0,
+      "id": 68719476771,
+      "label": "IDENTIFIER",
+      "lineNumber": 8,
+      "name": "app",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express:<returnValue>"
+    },
+    {
+      "code": "this",
+      "columnNumber": 13,
+      "id": 68719476765,
+      "label": "IDENTIFIER",
+      "lineNumber": 3,
+      "name": "this",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "vuln2.js::program"
+    },
+    {
+      "code": "this",
+      "columnNumber": 16,
+      "id": 68719476759,
+      "label": "IDENTIFIER",
+      "lineNumber": 1,
+      "name": "this",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "vuln2.js::program"
+    },
+    {
+      "code": "data",
+      "columnNumber": 40,
+      "id": 115964116994,
+      "label": "METHOD_PARAMETER_IN",
+      "lineNumber": 11,
+      "name": "data",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "_tmp_0",
+      "columnNumber": 19,
+      "id": 68719476740,
+      "label": "IDENTIFIER",
+      "lineNumber": 13,
+      "name": "_tmp_0",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "3000",
+      "columnNumber": 13,
+      "id": 90194313224,
+      "label": "LITERAL",
+      "lineNumber": 6,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.Number"
+    },
+    {
+      "code": "res",
+      "columnNumber": 19,
+      "id": 68719476738,
+      "label": "IDENTIFIER",
+      "lineNumber": 13,
+      "name": "res",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "req",
+      "columnNumber": 18,
+      "id": 115964116996,
+      "label": "METHOD_PARAMETER_IN",
+      "lineNumber": 8,
+      "name": "req",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "require('express')",
+      "columnNumber": 16,
+      "id": 30064771072,
+      "label": "CALL",
+      "lineNumber": 1,
+      "name": "require",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "<operator>.formatString(\"Server running at http://localhost:\", port, \"\")",
+      "columnNumber": 16,
+      "id": 30064771092,
+      "label": "CALL",
+      "lineNumber": 20,
+      "name": "<operator>.formatString",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "res",
+      "columnNumber": 8,
+      "id": 68719476741,
+      "label": "IDENTIFIER",
+      "lineNumber": 15,
+      "name": "res",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "get",
+      "columnNumber": 4,
+      "id": 55834574856,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 8,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program"
+    },
+    {
+      "code": "app",
+      "columnNumber": 0,
+      "id": 68719476772,
+      "label": "IDENTIFIER",
+      "lineNumber": 19,
+      "name": "app",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express:<returnValue>"
+    },
+    {
+      "code": "filePath",
+      "columnNumber": 10,
+      "id": 68719476746,
+      "label": "IDENTIFIER",
+      "lineNumber": 10,
+      "name": "filePath",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "path:join:<returnValue>"
+    },
+    {
+      "code": "require('fs')",
+      "columnNumber": 11,
+      "id": 30064771073,
+      "label": "CALL",
+      "lineNumber": 2,
+      "name": "require",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "filePath",
+      "columnNumber": 16,
+      "id": 68719476753,
+      "label": "IDENTIFIER",
+      "lineNumber": 11,
+      "name": "filePath",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "path:join:<returnValue>"
+    },
+    {
+      "code": "require('path')",
+      "columnNumber": 13,
+      "id": 30064771074,
+      "label": "CALL",
+      "lineNumber": 3,
+      "name": "require",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "console",
+      "columnNumber": 4,
+      "id": 68719476755,
+      "label": "IDENTIFIER",
+      "lineNumber": 20,
+      "name": "console",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "__whatwg.console"
+    },
+    {
+      "code": "_tmp_0",
+      "columnNumber": 19,
+      "id": 68719476737,
+      "label": "IDENTIFIER",
+      "lineNumber": 13,
+      "name": "_tmp_0",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "log",
+      "columnNumber": 12,
+      "id": 55834574855,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 20,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2"
+    },
+    {
+      "code": "this",
+      "columnNumber": 11,
+      "id": 68719476762,
+      "label": "IDENTIFIER",
+      "lineNumber": 2,
+      "name": "this",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "vuln2.js::program"
+    },
+    {
+      "code": "express()",
+      "columnNumber": 12,
+      "id": 30064771097,
+      "label": "CALL",
+      "lineNumber": 5,
+      "name": "express",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "\"File not found!\"",
+      "columnNumber": 40,
+      "id": 90194313217,
+      "label": "LITERAL",
+      "lineNumber": 13,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "port",
+      "columnNumber": 6,
+      "id": 68719476769,
+      "label": "IDENTIFIER",
+      "lineNumber": 6,
+      "name": "port",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.Number"
+    },
+    {
+      "code": "<lambda>2",
+      "columnNumber": 17,
+      "id": 124554051586,
+      "label": "METHOD_REF",
+      "lineNumber": 19,
+      "name": "vuln2.js::program:<lambda>2",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program"
+    },
+    {
+      "code": "port",
+      "columnNumber": 11,
+      "id": 68719476774,
+      "label": "IDENTIFIER",
+      "lineNumber": 19,
+      "name": "port",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.Number"
+    },
+    {
+      "code": "\"/file\"",
+      "columnNumber": 8,
+      "id": 90194313225,
+      "label": "LITERAL",
+      "lineNumber": 8,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "console",
+      "columnNumber": 4,
+      "id": 68719476754,
+      "label": "IDENTIFIER",
+      "lineNumber": 20,
+      "name": "console",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "__whatwg.console"
+    },
+    {
+      "code": "data",
+      "columnNumber": 17,
+      "id": 68719476743,
+      "label": "IDENTIFIER",
+      "lineNumber": 15,
+      "name": "data",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "path",
+      "columnNumber": 21,
+      "id": 68719476747,
+      "label": "IDENTIFIER",
+      "lineNumber": 10,
+      "name": "path",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "path"
+    },
+    {
+      "code": "(_tmp_0 = res.status(404))",
+      "columnNumber": 19,
+      "id": 30064771077,
+      "label": "CALL",
+      "lineNumber": 13,
+      "name": "<operator>.assignment",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "path.join(__dirname, fileName)",
+      "columnNumber": 21,
+      "id": 30064771086,
+      "label": "CALL",
+      "lineNumber": 10,
+      "name": "join",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "app",
+      "columnNumber": 6,
+      "id": 68719476766,
+      "label": "IDENTIFIER",
+      "lineNumber": 5,
+      "name": "app",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express:<returnValue>"
+    },
+    {
+      "code": "<lambda>0",
+      "columnNumber": 17,
+      "id": 124554051585,
+      "label": "METHOD_REF",
+      "lineNumber": 8,
+      "name": "vuln2.js::program:<lambda>0",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program"
+    },
+    {
+      "code": "res",
+      "columnNumber": 23,
+      "id": 115964116997,
+      "label": "METHOD_PARAMETER_IN",
+      "lineNumber": 8,
+      "name": "res",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "status",
+      "columnNumber": 23,
+      "id": 55834574848,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 13,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1"
+    },
+    {
+      "code": "fs",
+      "columnNumber": 4,
+      "id": 68719476752,
+      "label": "IDENTIFIER",
+      "lineNumber": 11,
+      "name": "fs",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "fs"
+    },
+    {
+      "code": "<lambda>1",
+      "columnNumber": 34,
+      "id": 124554051584,
+      "label": "METHOD_REF",
+      "lineNumber": 11,
+      "name": "vuln2.js::program:<lambda>0:<lambda>1",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0"
+    },
+    {
+      "code": "\"Server running at http://localhost:\"",
+      "columnNumber": 17,
+      "id": 90194313219,
+      "label": "LITERAL",
+      "lineNumber": 20,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>2",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "file",
+      "columnNumber": 31,
+      "id": 55834574852,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 9,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0"
+    },
+    {
+      "code": "\"utf8\"",
+      "columnNumber": 26,
+      "id": 90194313218,
+      "label": "LITERAL",
+      "lineNumber": 11,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "path",
+      "columnNumber": 21,
+      "id": 68719476748,
+      "label": "IDENTIFIER",
+      "lineNumber": 10,
+      "name": "path",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "path"
+    },
+    {
+      "code": "404",
+      "columnNumber": 30,
+      "id": 90194313216,
+      "label": "LITERAL",
+      "lineNumber": 13,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "__ecma.Number"
+    },
+    {
+      "code": "__dirname",
+      "columnNumber": 31,
+      "id": 68719476749,
+      "label": "IDENTIFIER",
+      "lineNumber": 10,
+      "name": "__dirname",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "send",
+      "columnNumber": 12,
+      "id": 55834574850,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 15,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1"
+    },
+    {
+      "code": "fs",
+      "columnNumber": 4,
+      "id": 68719476751,
+      "label": "IDENTIFIER",
+      "lineNumber": 11,
+      "name": "fs",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0",
+      "typeFullName": "fs"
+    },
+    {
+      "code": "fs",
+      "columnNumber": 6,
+      "id": 68719476760,
+      "label": "IDENTIFIER",
+      "lineNumber": 2,
+      "name": "fs",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "fs"
+    },
+    {
+      "code": "app",
+      "columnNumber": 0,
+      "id": 68719476770,
+      "label": "IDENTIFIER",
+      "lineNumber": 8,
+      "name": "app",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "express:<returnValue>"
+    },
+    {
+      "code": "res",
+      "columnNumber": 8,
+      "id": 68719476742,
+      "label": "IDENTIFIER",
+      "lineNumber": 15,
+      "name": "res",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1",
+      "typeFullName": "ANY"
+    },
+    {
+      "code": "send",
+      "columnNumber": 35,
+      "id": 55834574849,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 13,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0:<lambda>1"
+    },
+    {
+      "code": "\"path\"",
+      "columnNumber": 21,
+      "id": 90194313223,
+      "label": "LITERAL",
+      "lineNumber": 3,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "path",
+      "columnNumber": 6,
+      "id": 68719476763,
+      "label": "IDENTIFIER",
+      "lineNumber": 3,
+      "name": "path",
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "path"
+    },
+    {
+      "code": "\"express\"",
+      "columnNumber": 24,
+      "id": 90194313221,
+      "label": "LITERAL",
+      "lineNumber": 1,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program",
+      "typeFullName": "__ecma.String"
+    },
+    {
+      "code": "listen",
+      "columnNumber": 4,
+      "id": 55834574857,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 19,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program"
+    },
+    {
+      "code": "join",
+      "columnNumber": 26,
+      "id": 55834574853,
+      "label": "FIELD_IDENTIFIER",
+      "lineNumber": 10,
+      "parentFile": "vuln2.js",
+      "parentMethod": "vuln2.js::program:<lambda>0"
+    }
+  ]
+}
