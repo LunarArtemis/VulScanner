@@ -1,0 +1,111 @@
+gadget,label
+"const VAR1 = FUN1();
+VAR1.FUN2("""", (VAR2, VAR3) => {
+  const VAR4 = VAR2.VAR5.VAR4;
+  const VAR6 = VAR4 + """";",1
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+  const VAR4 = VAR2.VAR5.VAR4;
+  const VAR6 = FUN2("""");",0
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+    const VAR4 = VAR2.VAR5.VAR6;
+    const VAR7 = VAR8.FUN2(VAR9, VAR4);",1
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+    const VAR4 = VAR2.VAR5.VAR6;
+    const VAR7 = VAR8.FUN2(VAR9, VAR4);",1
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+    const VAR4 = VAR2.VAR5.VAR6;
+    const VAR7 = VAR8.FUN2(VAR9, VAR4);",1
+"const VAR1 = FUN1("""");
+const VAR2 = FUN1("""");
+const VAR3 = VAR1.FUN2(VAR2.FUN3(VAR4, """" + VAR5.VAR6.VAR3));",0
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+  const VAR4 = VAR2.VAR5.VAR6;
+  const VAR7 = VAR8.FUN2(VAR9, VAR4);",0
+"const VAR1 = FUN1("""");
+const VAR2 = FUN1("""");
+const VAR3 = """" + VAR4.VAR5.VAR6;
+VAR1.FUN2(VAR2.FUN3(VAR3), (VAR7, VAR8) => {",0
+"var VAR1 = VAR2.VAR3.VAR4 + """";
+VAR5.FUN1(VAR1, FUN2(VAR6, VAR7) {",1
+"
+
+const VAR1 = """" + VAR2.VAR3.VAR4;
+FUN1(VAR1);",1
+"
+
+const VAR1 = """" + VAR2.VAR3.VAR4 + """";
+const VAR5 = FUN1(VAR1);",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR12.FUN6(VAR11); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = ["""", """", """"]; if (!VAR7.FUN2(VAR3)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR3); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8 + """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR12.FUN6(VAR11); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = ["""", """", """"]; if (!VAR7.FUN2(VAR3)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR3); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR2.FUN2(VAR4, VAR5.VAR6.VAR7); VAR1.FUN3(VAR3, """", (VAR8, VAR9) => { if (VAR8) { VAR10.FUN4(""""); return; } VAR11.FUN5(VAR9); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; if (VAR3.FUN2("""")) { VAR7.FUN3(400).FUN4(""""); return; } const VAR8 = VAR2.FUN5(VAR9, VAR3); VAR1.FUN6(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR7.FUN4(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR2.FUN2(VAR4.VAR5.VAR6); const VAR7 = VAR2.FUN3(VAR8, VAR3); VAR1.FUN4(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN5(""""); return; } VAR12.FUN6(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (VAR7.FUN3("""")) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = ["""", """", """"]; const VAR8 = VAR2.FUN2(VAR9, VAR3); if (!VAR7.FUN3(VAR3)) { VAR10.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR8, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR10.FUN5(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (VAR7.FUN3("""")) { VAR9.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR2.FUN2(VAR4.VAR5.VAR6); const VAR7 = VAR2.FUN3(VAR8, VAR3); VAR1.FUN4(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN5(""""); return; } VAR12.FUN6(VAR10); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = ["""", """"]; const VAR8 = VAR2.FUN2(VAR9, VAR3); if (!VAR7.FUN3(VAR3)) { VAR10.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR8, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR10.FUN5(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (VAR7.FUN3("""")) { VAR9.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = ["""", """"]; const VAR8 = VAR2.FUN2(VAR9, VAR3); if (!VAR7.FUN3(VAR3)) { VAR10.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR8, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR10.FUN5(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (VAR7.FUN3("""")) { VAR9.FUN4(400).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR3); const VAR8 = VAR2.FUN3(VAR9, VAR7); VAR1.FUN4(VAR8, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN5(""""); return; } VAR13.FUN6(VAR11); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, """", VAR3); VAR1.FUN3(VAR7, """", (VAR9, VAR10) => { if (VAR9) { VAR11.FUN4(""""); return; } VAR12.FUN5(VAR10); });",1
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = ["""", """"]; const VAR4 = VAR5.VAR6.VAR7; if (!VAR3.FUN2(VAR4)) { VAR8.FUN3(400).FUN4(""""); return; } const VAR9 = VAR2.FUN5(VAR10, VAR4); VAR1.FUN6(VAR9, """", (VAR11, VAR12) => { if (VAR11) { VAR13.FUN7(""""); return; } VAR8.FUN4(VAR12); });",0
+"const VAR1 = FUN1(""""); const VAR2 = FUN1(""""); const VAR3 = VAR4.VAR5.VAR6; const VAR7 = VAR2.FUN2(VAR8, VAR3); if (!VAR7.FUN3(VAR8)) { VAR9.FUN4(403).FUN5(""""); return; } VAR1.FUN6(VAR7, """", (VAR10, VAR11) => { if (VAR10) { VAR12.FUN7(""""); return; } VAR9.FUN5(VAR11); });",0
+"  """",
+  FUN1(FUN2 (VAR1, VAR2) => {
+    const { VAR3 } = VAR1.VAR4; // [1] VAR5
+    try {",1
+"// Serve the uploaded VAR1
+VAR2.FUN1("""", FUN2 (VAR3, VAR4) {
+  const VAR5 = VAR3.VAR6.VAR5;
+  const VAR7 = VAR8.FUN3(VAR9, """", VAR5);",1
+"
+VAR1.FUN1("""", (VAR2, VAR3) => {
+    const VAR4 = VAR2.VAR5.VAR4 || """"; 
+",1

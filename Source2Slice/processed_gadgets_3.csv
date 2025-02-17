@@ -1,0 +1,111 @@
+gadget,label
+"const app = express();
+app.get('/file/:filePath', (req, res) => {
+  const filePath = req.params.filePath;
+  const newFilePath = filePath + '/etc/passwd';",1
+"
+app.get('/read/:filePath', (req, res) => {
+  const filePath = req.params.filePath;
+  const fs = require('fs');",0
+"
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);",1
+"
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);",1
+"
+app.get('/config', (req, res) => {
+    const configFilePath = req.query.file;
+    const filePath = path.join(__dirname, configFilePath);",1
+"const fs = require('fs');
+const path = require('path');
+const file = fs.readFileSync(path.join(__dirname, '../uploads/' + req.params.file));",0
+"
+app.get('/', (req, res) => {
+  const userInput = req.query.file;
+  const filePath = path.join(__dirname, userInput);",0
+"const fs = require('fs');
+const path = require('path');
+const filePath = './data/' + req.query.filename;
+fs.readFile(path.join(filePath), (err, data) => {",0
+"var filePath = req.query.file + "".txt"";
+fs.readFile(filePath, function(err, data) {",1
+"
+
+const filePath = '../uploads/' + req.params.file;
+readFile(filePath);",1
+"
+
+const filePath = '../' + req.body.path + '/data.txt';
+const contents = readFile(filePath);",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const userInput = req.query.filename; const sanitizedPath = path.normalize(userInput); const filePath = path.join(__dirname, sanitizedPath); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } console.log(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const allowedFiles = ['file1.txt', 'file2.txt', 'file3.txt']; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access Denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname + '/uploads ', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const userInput = req.query.filename; const sanitizedPath = path.normalize(userInput); const filePath = path.join(__dirname, sanitizedPath); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } console.log(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const allowedFiles = ['file1.txt', 'file2.txt', 'file3.txt']; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access Denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const filePath = path.join(__dirname, req.query.file); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; if (fileName.includes('..')) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access Denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const sanitizedFileName = path.basename(req.query.file); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); if (filePath.includes('..')) { res.status(403).send('Access Denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(400).send('Invalid file name'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, 'uploads', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const allowedFiles = ['file1.txt', 'file2.txt', 'file3.txt']; const filePath = path.join(__dirname, fileName); if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, 'public', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const userFileName = req.query.file; const filePath = path.join(__dirname, userFileName); if (filePath.includes('..')) { res.status(400).send('Access Denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const sanitizedFileName = path.basename(req.query.file); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const allowedFiles = ['file1.txt', 'file2.txt']; const filePath = path.join(__dirname, fileName); if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, 'secure_dir', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const userInput = req.query.file; const filePath = path.join(__dirname, '..', userInput); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.body.file; const sanitizedPath = path.normalize(fileName); const filePath = path.join(__dirname, sanitizedPath); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['file1.txt', 'file2.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const sanitizedFileName = path.basename(fileName); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['config.json', 'data.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.body.filename; const sanitizedFileName = path.basename(fileName); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, '..', fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, 'public', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); if (filePath.includes('..')) { res.status(400).send('Access denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const allowedFiles = ['readme.txt', 'config.json']; const filePath = path.join(__dirname, fileName); if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, 'secure_dir', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const sanitizedFileName = path.basename(fileName); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['config.json', 'logs.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const sanitizedFileName = path.basename(fileName); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['file1.txt', 'file2.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, fileName); if (filePath.includes('..')) { res.status(400).send('Invalid file path'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['config.json', 'data.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const sanitizedFileName = path.basename(fileName); const filePath = path.join(__dirname, sanitizedFileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.join(__dirname, '..', fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('File not found'); return; } res.send(data); });",1
+"const fs = require('fs'); const path = require('path'); const allowedFiles = ['config.json', 'logs.txt']; const fileName = req.query.file; if (!allowedFiles.includes(fileName)) { res.status(400).send('Invalid file name'); return; } const filePath = path.join(__dirname, fileName); fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"const fs = require('fs'); const path = require('path'); const fileName = req.query.file; const filePath = path.resolve(__dirname, fileName); if (!filePath.startsWith(__dirname)) { res.status(403).send('Access denied'); return; } fs.readFile(filePath, 'utf8', (err, data) => { if (err) { console.error('Error reading file'); return; } res.send(data); });",0
+"  ""/clean_sync_dir"",
+  error_catcher(async (req, res) => {
+    const { dir_name } = req.body; // [1] source
+    try {",1
+"// Serve the uploaded file
+app.get('/uploads/:filename', function (req, res) {
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname, 'uploads', filename);",1
+"
+app.get('/time', (req, res) => {
+    const locale = req.query.locale || 'en'; 
+",1
