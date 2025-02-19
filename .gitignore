@@ -207,3 +207,8 @@ cython_debug/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore HDF5 files
+Datasets/VDISC_test.hdf5
+Datasets/VDISC_train.hdf5
+Datasets/VDISC_validate.hdf5
