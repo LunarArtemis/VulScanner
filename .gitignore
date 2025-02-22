@@ -174,10 +174,10 @@ cython_debug/
 ###################
 *.com
 *.class
-*.dll
+
 *.exe
 *.o
-*.so
+
 
 # Packages #
 ############
