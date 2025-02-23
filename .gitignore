@@ -174,10 +174,10 @@ cython_debug/
 ###################
 *.com
 *.class
-*.dll
+
 *.exe
 *.o
-*.so
+
 
 # Packages #
 ############
@@ -207,3 +207,14 @@ cython_debug/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore HDF5 files
+Datasets/VDISC_test.hdf5
+Datasets/VDISC_train.hdf5
+Datasets/VDISC_validate.hdf5
+
+# Ignore all json file in graph2vec folder
+graph2vec/dataset/graph2vec_input/*.json
+
+
+.vscode
