@@ -1,0 +1,16 @@
+dask==2025.2.0
+gensim==4.3.3
+h5py==3.13.0
+imblearn==0.0
+joblib==1.4.2
+libclang==18.1.1
+matplotlib==3.10.0
+networkx==3.4.2
+numpy==2.2.3
+pandas==2.2.3
+scikit_learn==1.6.1
+tensorflow==2.18.0
+torch==2.6.0
+torch_geometric==2.6.1
+tqdm==4.67.1
+transformers==4.49.0
