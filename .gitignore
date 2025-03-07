@@ -218,3 +218,4 @@ graph2vec/dataset/graph2vec_input/*.json
 
 
 .vscode
+Datasets/processed
