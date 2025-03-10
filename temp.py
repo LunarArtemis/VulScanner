@@ -1,154 +1,122 @@
-# Extract AST from C source code using clang
-import clang.cindex
-import sys
-import json
-import os
-import numpy as np
-import pandas as pd
 import torch
-from torch_geometric.data import Data
-from torch.utils.data import Dataset
-from tqdm import tqdm
-from typing import Optional, List, Dict, Any, Tuple
+from torch.nn import Linear, Dropout
+import torch.nn.functional as F
+from torch_geometric.nn import GCNConv, global_mean_pool as gap, global_max_pool as gmp
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
 
-# Configure libclang path
-if os.name == 'nt':  # Windows
-    print('Windows')
-    clang.cindex.Config.set_library_file('D:/Project/LLVM/bin/libclang.dll')
-    print(clang.cindex.Config.library_path)
-elif os.name == 'posix':  # Linux/Mac
-    print('Linux/Mac')
-    clang.cindex.Config.set_library_file('/Library/Developer/CommandLineTools/usr/lib/libclang.dylib')
-    # clang.cindex.Config.set_library_path('/Library/Developer/CommandLineTools/usr/lib/')
-    print(clang.cindex.Config.library_path)
+# Hyperparameters
+embedding_size = 128
+dropout_rate = 0.3
+learning_rate = 0.005
+patience = 10
+num_epochs = 100
 
-# Verify if libclang is loaded
-print(clang.cindex.Config.loaded)  # Should print `True`
+class GCN(torch.nn.Module):
+    def __init__(self):
+        # Init parent
+        super(GCN, self).__init__()
+        torch.manual_seed(42)
 
-def save_ast(node):
-    """ Recursively save the AST in a dictionary format """
-    node.children = list(node.get_children())
+        # GCN layers
+        self.initial_conv = GCNConv(dataset.num_features, embedding_size) #to  translate our node features into the size of the embedding
+        self.conv1 = GCNConv(embedding_size, embedding_size)
+        self.conv2 = GCNConv(embedding_size, embedding_size)
+        # pooling layer
+        #self.pool = TopKPooling(embedding_size, ratio=0.8)
+        #dropout layer
+        #self.dropout = Dropout(p=0.2)
 
-    for child in node.children:
-        save_ast(child)
-        
-def numbering_ast_nodes(node, counter=1):
-    """ Recursively number the AST nodes """
-    node.identifier = counter
-    counter += 1
+        # Output layer
+        self.lin1 = Linear(embedding_size*2, 128) # linear output layer ensures that we get a continuous unbounded output value. It input is the flattened vector (embedding size *2) from the pooling layer (mean and max)
+        self.lin2 = Linear(128, 128)
+        self.lin3 = Linear(128, 1)
 
-    node.children = list(node.get_children())
-    for child in node.children:
-        counter = numbering_ast_nodes(child, counter)
+        self.act1 = torch.nn.ReLU()
+        self.act2 = torch.nn.ReLU()
 
-    return counter
+    def forward(self, x, edge_index, batch_index):
+        # First Conv layer
+        hidden = self.initial_conv(x, edge_index)
+        hidden = F.relu(hidden)
 
-def generate_edgelist(ast_root):
-    """ Generate an edge list from the AST """
-    edges = []
+        # Other Conv layers
+        hidden = self.conv1(hidden, edge_index)
+        hidden = F.relu(hidden)
 
-    def walk_tree_and_add_edges(node):
-        for child in node.children:
-            edges.append([node.identifier, child.identifier])
-            walk_tree_and_add_edges(child)
+        hidden = self.conv2(hidden, edge_index)
+        hidden = F.relu(hidden)
+        #hidden = self.dropout(hidden)
+        # Global Pooling (stack different aggregations)
+        hidden = torch.cat([gmp(hidden, batch_index), 
+                            gap(hidden, batch_index)], dim=1)
+        # Apply a final (linear) classifier.
+        out = self.lin1(hidden)
+        out = self.act1(out)
+        out = self.lin2(out)
+        out = self.act2(out)
+        #out = F.dropout(out, p=0.5, training=self.training)
+        out = self.lin3(out)
+        out = torch.sigmoid(out)
 
-    walk_tree_and_add_edges(ast_root)
+        # return out, hidden
+        return out
 
-    return edges
+# Set device
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-def generate_features(ast_root):
-    """ Generate features for each node in the AST """
-    features = {}
+# Initialize model
+#model = GCN(num_features=dataset.num_features).to(device)
+model = GCN().to(device)
+# Update optimizer with weight decay
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
 
-    def walk_tree_and_set_features(node):
-        out_degree = len(node.children)
-        degree = out_degree
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', patience=3, factor=0.5, verbose=True)
+loss_fn = torch.nn.BCELoss()
 
-        features[node.identifier] = degree
+# Training function
+def train():
+    model.train()
 
-        for child in node.children:
-            walk_tree_and_set_features(child)
+    loss_all = 0
+    for data in train_dataset_loader:
+        data = data.to(device)
+        optimizer.zero_grad()
+        output = model(data.x.float(), data.edge_index, data.batch)
+        label = data.y.to(device)
+        #loss = torch.sqrt(loss_fn(output, label))  
+        loss = loss_fn(output.squeeze(), label.float())  
+        loss.backward()
+        loss_all += data.num_graphs * loss.item()
+        optimizer.step()
+    return loss_all / len(train_dataset)
 
-    walk_tree_and_set_features(ast_root)
+# Evaluation function
+def evaluate(loader):
+    model.eval()
 
-    return features
+    predictions = []
+    labels = []
 
-def get_source_file(datapoints):
-    """ Get the source file from the list of datapoints """
-    if len(datapoints) == 1:
-        return datapoints.iloc[0]
+    with torch.no_grad():
+        for data in loader:
 
-def clang_process(testcase, **kwargs):
-    """Parses source code with Clang and extracts AST-based graph representation."""
-    parse_list = [
-        (testcase.filename, testcase.code)
-    ]
+            data = data.to(device)
+            # pred = model(data.x.float(), data.edge_index, data.batch).detach().cpu().numpy()
+            pred = model(data.x.float(), data.edge_index, data.batch)
+            label_true = data.y.to(device)
+            label = data.y.detach().cpu().numpy()
+            # predictions.append(pred)
+            # labels.append(label)
+            predictions.append(np.rint(pred.cpu().detach().numpy()))
+            labels.append(label)
+            loss = loss_fn(pred.squeeze(), label_true.float())
+    # predictions = np.hstack(predictions)
+    # labels = np.hstack(labels)
+    predictions = np.concatenate(predictions).ravel()
+    labels = np.concatenate(labels).ravel()
 
-    # source_file = get_source_file(testcase)
-
-    # Parsing the source code and extracting AST using clang
-    index = clang.cindex.Index.create()
-    translation_unit = index.parse(
-        path=testcase.filename,
-        unsaved_files=parse_list,
-    )
-    ast_root = translation_unit.cursor
-
-    save_ast(ast_root)
-    numbering_ast_nodes(ast_root)
-
-    graphs_embedding = generate_edgelist(ast_root)
-    nodes_embedding = generate_features(ast_root)
-
-    y = torch.tensor([testcase.vuln], dtype=torch.int64)
-
-    # delete clang objects
-    del translation_unit
-    del ast_root
-    del index
-
-    return Data(x=nodes_embedding, edge_index=graphs_embedding, y=y)
-
-class GenDatasets(Dataset):
-    def __init__(self, csv_path, root, transform=None, pre_transform=None):
-        """
-        Args:
-            csv_path (str): Path to the CSV dataset.
-            root (str): Root directory where processed data will be stored.
-            transform (callable, optional): Optional transform to be applied on a sample.
-            pre_transform (callable, optional): Optional pre-transform before processing.
-        """
-        self.csv_path = csv_path
-        self.root = root
-        self.transform = transform
-        self.pre_transform = pre_transform
-        super(GenDatasets, self).__init__()
-        
-        self.processed_dir = os.path.join(root, 'processed')
-        os.makedirs(self.processed_dir, exist_ok=True)
-        self.data = pd.read_csv(self.csv_path)
-    
-    @property
-    def raw_file_names(self):
-        return []
-
-    @property
-    def processed_file_names(self):
-        return [f'data_{i}.pt' for i in range(len(self.data))]
-
-    def download(self):
-        pass  # No downloading required
-
-    def process(self):
-        for index, vuln in tqdm(self.data.iterrows(), total=len(self.data)):
-            data = clang_process(vuln)
-            torch.save(data, os.path.join(self.processed_dir, f'data_{index}.pt'))
-    
-    def len(self):
-        return len(self.data)
-
-    def get(self, idx):
-        return torch.load(os.path.join(self.processed_dir, f'data_{idx}.pt'))
-    
-dataset = GenDatasets(csv_path="Datasets/Normalized_CWE-469.csv", root="./data")
-dataset.process()
+    # print(predictions)
+    # print(labels)
+    return accuracy_score(labels, predictions), loss
