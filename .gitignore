@@ -216,6 +216,8 @@ Datasets/VDISC_validate.hdf5
 # Ignore all json file in graph2vec folder
 graph2vec/dataset/graph2vec_input/*.json
 
+# Igore all file in graph2vec/features
+graph2vec/features/*
 
 .vscode
 Datasets/processed
