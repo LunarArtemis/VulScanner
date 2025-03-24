@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 embedding_size = 128
 dropout_rate = 0.3
 learning_rate = 0.005
-patience = 10
+patience = 5
 num_epochs = 100
 
 class GCN(torch.nn.Module):
@@ -20,9 +20,10 @@ class GCN(torch.nn.Module):
         torch.manual_seed(42)
 
         # GCN layers
-        self.initial_conv = GCNConv(dataset.num_features, embedding_size) #to  translate our node features into the size of the embedding
+        self.initial_conv = GCNConv(dataset.num_features, embedding_size) # to translate our node features into the size of the embedding
         self.conv1 = GCNConv(embedding_size, embedding_size)
         self.conv2 = GCNConv(embedding_size, embedding_size)
+        
         # pooling layer
         #self.pool = TopKPooling(embedding_size, ratio=0.8)
         #dropout layer
@@ -32,6 +33,7 @@ class GCN(torch.nn.Module):
         self.lin1 = Linear(embedding_size*2, 128) # linear output layer ensures that we get a continuous unbounded output value. It input is the flattened vector (embedding size *2) from the pooling layer (mean and max)
         self.lin2 = Linear(128, 128)
         self.lin3 = Linear(128, 1)
+        
 
         self.act1 = torch.nn.ReLU()
         self.act2 = torch.nn.ReLU()
@@ -48,9 +50,11 @@ class GCN(torch.nn.Module):
         hidden = self.conv2(hidden, edge_index)
         hidden = F.relu(hidden)
         #hidden = self.dropout(hidden)
+        
         # Global Pooling (stack different aggregations)
         hidden = torch.cat([gmp(hidden, batch_index), 
                             gap(hidden, batch_index)], dim=1)
+        
         # Apply a final (linear) classifier.
         out = self.lin1(hidden)
         out = self.act1(out)
@@ -69,6 +73,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Initialize model
 #model = GCN(num_features=dataset.num_features).to(device)
 model = GCN().to(device)
+print("Number of parameters: ", sum(p.numel() for p in model.parameters()))
 # Update optimizer with weight decay
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
 
@@ -78,45 +83,41 @@ loss_fn = torch.nn.BCELoss()
 # Training function
 def train():
     model.train()
+    total_loss = 0
 
-    loss_all = 0
     for data in train_dataset_loader:
         data = data.to(device)
         optimizer.zero_grad()
         output = model(data.x.float(), data.edge_index, data.batch)
         label = data.y.to(device)
-        #loss = torch.sqrt(loss_fn(output, label))  
-        loss = loss_fn(output.squeeze(), label.float())  
+
+        loss = loss_fn(output.squeeze(), label.float())
         loss.backward()
-        loss_all += data.num_graphs * loss.item()
+
         optimizer.step()
-    return loss_all / len(train_dataset)
+        total_loss += loss.item()
+        
+    return total_loss / len(train_dataset_loader)
 
 # Evaluation function
 def evaluate(loader):
     model.eval()
+    predictions, labels = [], []
 
-    predictions = []
-    labels = []
-
+    total_loss = 0
     with torch.no_grad():
         for data in loader:
-
             data = data.to(device)
-            # pred = model(data.x.float(), data.edge_index, data.batch).detach().cpu().numpy()
-            pred = model(data.x.float(), data.edge_index, data.batch)
-            label_true = data.y.to(device)
-            label = data.y.detach().cpu().numpy()
-            # predictions.append(pred)
-            # labels.append(label)
-            predictions.append(np.rint(pred.cpu().detach().numpy()))
-            labels.append(label)
-            loss = loss_fn(pred.squeeze(), label_true.float())
-    # predictions = np.hstack(predictions)
-    # labels = np.hstack(labels)
+            pred = model(data.x.float(), data.edge_index, data.batch).squeeze()
+
+            label_true = data.y.float()
+            loss = loss_fn(pred, label_true)
+
+            total_loss += loss.item()
+            predictions.append(np.rint(pred.cpu().numpy()))
+            labels.append(label_true.cpu().numpy())
+
     predictions = np.concatenate(predictions).ravel()
     labels = np.concatenate(labels).ravel()
 
-    # print(predictions)
-    # print(labels)
-    return accuracy_score(labels, predictions), loss
+    return accuracy_score(labels, predictions), total_loss / len(loader)
