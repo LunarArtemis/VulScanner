@@ -1,8 +1,23 @@
-img_filename(const char *mapimgfile, enum imageformat format, char *filename, size_t filename_len)
+int getValueFromArray(int *array, int len, int index)
 {
-    fc_assert_ret_val(imageformat_is_valid(format), FALSE);
 
-    fc_snprintf(filename, filename_len, "%s.map.%s", mapimgfile, imageformat_name(format));
+    int value;
 
-    return TRUE;
+    // check that the array index is less than the maximum
+
+    // length of the array
+    if (index < len)
+    {
+        // get the value at the specified index of the array
+        value = array[index];
+    }
+    // if array index is invalid then output error message
+    // and return value indicating error
+    else
+    {
+        printf("Value is: %d\n", array[index]);
+        value = -1;
+    }
+
+    return value;
 }
